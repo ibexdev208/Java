@@ -1,2 +1,2 @@
-# java_and_frameworks
+# Java
 Core java and frameworks
