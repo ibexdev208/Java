@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:insert="/fragments/header :: header"></div>
+<meta charset="UTF-8">
+<title>iBexDev</title>
+<div th:insert="/fragments/header :: header"></div>
+
+<style>
+#h1 {
+	text-align: center !important;
+	width: 50%;
+	font-size: 4rem;
+	transform: translateY(-100px);
+	margin-left: 30%;
+	opacity: 0.3;
+}
+.mainArea_books {
+	margin: 0;
+	padding: 0;
+	display: grid;
+	transform: translateY(200px);
+}
+.rightPanel_books {
+	padding: 5%;
+	color: #666;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.books {
+	width: 100%;
+	grid-gap: 30px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	transform: translateY(-40px);
+	justify-items: center !important;
+	align-items: center;
+	/* background-color: coral; */
+}
+
+.books img {
+	height: 60%;
+	width: 60%;
+}
+
+.books table td:nth-child(odd){
+	font-weight: bold;
+}
+
+.books table td:nth-child(even){
+	margin-left: 0;
+}
+
+.books table tr{
+	border-bottom: 1px solid #ccc;
+}
+
+.books table {
+	width: 60%;
+	margin: 40px 0;
+	color: #999;
+}
+
+.books table #tds {
+	width: 45px;
+}
+
+.books .table:nth-child(1) {
+	margin: 0;
+}
+
+.footer {
+	margin-top: 180px !important;
+}
+
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<section class="" id="icons-panel">
+  			<div id="navbar" th:insert="/fragments/navBar :: navItems"></div>
+		</section><!-- .icons-panel -->
+		<div class="banner">
+			<div class="navArea">
+  				<div class="brand">
+      				<a th:href="@{/}"><span id="logo">BS</span></a>
+    			</div>
+  				<div class="searchArea">
+    				<div id="navbar" th:insert="/fragments/navBar :: navSearch"></div>
+  				</div><!-- .SearchArea -->
+  				<div id="navbar" th:insert="/fragments/navBar :: navBar"></div>
+  			</div><!-- .NavArea -->
+  			<div id="h1">
+				<span>iBex Books</span>
+			</div>
+		</div><!-- .BANNER -->
+		<div class="mainArea_books">
+			<div class="rightPanel_books">
+				<div class="books">
+					<table class="table" th:each="book : ${booksList}">
+    					<tr style="text-align: center;">
+        					<td colspan="2" th:text="${book.title}"></td>
+    					</tr>
+    					<tr style="text-align: center;">
+    						<td colspan="2"><a th:href="@{/book/{id}(id=${book.id})}"><img th:src="${book.imgPath}" alt=""></a></td>
+    					</tr>
+    					<tr>
+        					<td id="tds">Genre:</td>
+        					<td th:text="${book.genre}"></td>
+    					</tr>
+    					<tr>
+        					<td id="tds">Author:</td>
+        					<td th:text="${book.author}"></td>
+    					</tr>
+    					<tr>
+        					<td id="tds">Price:</td>
+        					<td th:text="${book.price}"></td>
+    					</tr>
+    					<tr>
+						<td><a th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
+						<td><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+						</tr>
+    					<tr>
+        					<td colspan="2" id="tds"><a th:href="@{/book/{id}(id=${book.id})}">view book</a></td>
+    					</tr>
+					</table>
+    			</div><!-- .BOOKS -->
+			</div><!-- .RIGHTPANEL -->
+		</div><!--.MAINAREA -->
+	</div><!-- .Wrapper -->
+    <div class="footer" id="footer" th:insert="/fragments/footer :: footer">
+	</div>
+</body>
+</html>

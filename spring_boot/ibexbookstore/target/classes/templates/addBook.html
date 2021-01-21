@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:insert="/fragments/header :: header"></div>
+<meta charset="UTF-8">
+<title>iBexDev</title>
+<div th:insert="/fragments/header :: header"></div>
+
+<style>
+#h1 {
+	text-align: center !important;
+	width: 70%;
+	font-size: 2.5rem;
+	transform: translateY(-100px);
+	margin-left: 15%;
+	opacity: 0.3;
+}
+
+.mainArea_books {
+	margin: 0;
+	padding: 0;
+	display: grid;
+	transform: translateY(200px);
+}
+
+.rightPanel_books {
+	padding: 5%;
+	color: #666;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.books {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	transform: translateY(-40px);
+	justify-items: center !important;
+	align-items: center;
+	padding-right: 25%;
+}
+
+.books tr td {
+	border: 1px solid #fff;
+}
+
+.books img {
+	height: 60%;
+	width: 60%;
+}
+
+.books table td:nth-child(odd) {
+	font-weight: bold;
+	width: 100px;
+}
+
+.books table td:nth-child(even) {
+	margin-left: 0;
+}
+
+.books table tr {
+	border-bottom: 1px solid #ccc;
+}
+
+.books table {
+	width: 20%;
+	margin: 40px 0;
+	color: #999;
+}
+
+.books table #tds {
+	width: 140px;
+}
+
+.footer {
+	margin-top: 180px !important;
+}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<section class="" id="icons-panel">
+			<div id="navbar" th:insert="/fragments/navBar :: navItems"></div>
+		</section>
+		<!-- .icons-panel -->
+		<div class="banner">
+			<div class="navArea">
+				<div class="brand">
+					<a th:href="@{/}"><span id="logo">BS</span></a>
+				</div>
+				<div class="searchArea">
+					<div id="navbar" th:insert="/fragments/navBar :: navSearch"></div>
+				</div>
+				<!-- .SearchArea -->
+				<div id="navbar" th:insert="/fragments/navBar :: navBar"></div>
+			</div>
+			<!-- .NavArea -->
+			<div id="h1">
+				<span>Add New Book</span>
+			</div>
+		</div>
+		<!-- .BANNER -->
+		<div class="mainArea_books">
+			<div class="rightPanel_books">
+				<div class="books">
+					<table class="table">
+						<form action="/addBook">
+							<tr>
+								<td>ISBN:</td>
+								<td><input id="isbn" name="isbn" type="text"/></td>
+							</tr>
+							<tr>
+								<td>Title:</td>
+								<td><input type="text" id="title" name="title"></td>
+							</tr>
+							<tr>
+								<td>Genre:</td>
+								<td><input type="text" id="genre" name="genre"></td>
+							</tr>
+							<tr>
+								<td>Author:</td>
+								<td><input type="text" id="author" name="author"></td>
+							</tr>
+							<tr>
+								<td>Price:</td>
+								<td><input type="text" id="price" name="price"></td>
+							</tr>
+							<tr>
+								<td>Publisher:</td>
+								<td><input type="text" id="publisher" name="publisher"></td>
+							</tr>
+							<tr>
+								<td>Pub. Year:</td>
+								<td><input type="text" id="pubYear" name="pubYear"></td>
+							</tr>
+							<tr>
+								<td>Description:</td>
+								<td><textarea id="description" name="description" rows="2"
+										cols="50">
+									</textarea></td>
+							</tr>
+							<tr>
+								<td>Amazon URL</td>
+								<td><textarea type="text" name="buy" rows="2" cols="50">
+									</textarea></td>
+							</tr>
+							<tr>
+								<td>Image URL</td>
+								<td><textarea type="text" name="imgs" rows="2" cols="50">
+									</textarea></td>
+							</tr>
+						</form>
+					</table>
+					<input class="btn btn-success btn-lg" type="submit" value="Add">
+				</div>
+				<!-- .BOOKS -->
+			</div>
+			<!-- .RIGHTPANEL -->
+		</div>
+		<!--.MAINAREA -->
+	</div>
+	<!-- .Wrapper -->
+	<div class="footer" id="footer" th:insert="/fragments/footer :: footer">
+	</div>
+</body>
+</html>

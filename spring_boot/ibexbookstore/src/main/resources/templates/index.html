@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:insert="/fragments/header :: header"></div>
+<meta charset="UTF-8">
+<title>iBexDev</title>
+<div th:insert="/fragments/header :: header"></div>
+
+<style>
+#h1 {
+	text-align: center !important;
+	width: 50%;
+	font-size: 4rem;
+	transform: translateY(-100px);
+	margin-left: 30%;
+	opacity: 0.3;
+}
+
+.leftPanel h4 {
+	opacity: 0.2;
+}
+
+.list-group a {
+	margin-left: 20px;
+	color: #999;
+}
+
+.mainArea {
+	transform: translateY(200px) !important;
+}
+
+.rightPanel {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+	margin: 0 10%;
+}
+
+.rightPanel>div {
+	width: 80%;
+	height: 200px;
+	text-align: center;
+}
+
+.rightPanel>div:nth-chil(1) {
+	margin: 0 50px 0 300px;
+}
+
+.card {
+	height: auto !important;
+}
+
+.card:nth-child(3) {
+	height: auto !important;
+	margin-top: 10%;
+}
+
+.card p {
+	padding: 20px 0 0 20px;
+	text-align: left;
+	/* background-color: yellow; */
+}
+
+.footer {
+	margin-top: 300px !important;
+}
+
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<section class="" id="icons-panel">
+			<div id="navbar" th:insert="/fragments/navBar :: navItems"></div>
+		</section>
+		<!-- .icons-panel -->
+		<div class="banner">
+			<div class="navArea">
+				<div class="brand">
+					<a th:href="@{/}"><span id="logo">BS</span></a>
+				</div>
+				<div class="searchArea">
+					<div id="navbar" th:insert="/fragments/navBar :: navSearch"></div>
+				</div>
+				<!-- .SearchArea -->
+				<div id="navbar" th:insert="/fragments/navBar :: navBar"></div>
+			</div>
+			<!-- .NavArea -->
+			<div id="h1">
+				<span>iBex Books</span>
+			</div>
+		</div>
+		<!-- .BANNER -->
+		<div class="mainArea">
+			<div class="leftPanel">
+				<h4>CATEGORIES</h4>
+				<ul class="list-group">
+					<li
+						class="list-group-item d-flex justify-content-between align-items-center">
+						<a th:href="@{/database}">DATABASE</a>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between align-items-center">
+						<a th:href="@{/java}">JAVA</a>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between align-items-center">
+						<a th:href="@{/web}">WEB</a>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between align-items-center">
+						<a th:href="@{/books}">View All</a>
+					</li>
+				</ul>
+			</div>
+			<!-- .LEFTPANEL -->
+			<div class="rightPanel">
+				<div class="card text-white bg-dark mb-3"
+					style="max-width: 20rem;">
+					<div class="card-header">DATABASE</div>
+					<div class="card-body">
+						<h4 class="card-title">SQL - NoSQL</h4>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officia illum, 
+							sapiente, eius dolor architecto sed cumque sunt ipsam iusto reiciendis voluptatum 
+							mollitia labore maxime! Debitis incidunt laborum dolores ratione.
+							Ipsam nemo tempore cupiditate delectus quidem obcaecati tenetur totam soluta.
+						</p>
+					</div>
+				</div>
+				<div class="card text-white bg-warning mb-3"
+					style="max-width: 20rem;">
+					<div class="card-header">JAVA</div>
+					<div class="card-body">
+						<h4 class="card-title">Spring - Core</h4>
+						<p class="card-text">
+							 Alias distinctio nam officiis, architecto, aperiam, assumenda similique 
+							 suscipit ipsa pariatur illo numquam. Voluptatem, quidem sit. Laboriosam 
+							 qui suscipit ratione? Dignissimos fugit quos obcaecati atque architecto 
+							 explicabo dolore culpa incidunt sint beatae quia.
+						</p>
+					</div>
+				</div>
+				<div class="card text-white bg-info mb-3"
+					style="max-width: 20rem;">
+					<div class="card-header">WEB</div>
+					<div class="card-body">
+						<h4 class="card-title">JavaScript - HTML5</h4>
+						<p class="card-text">
+							Aperiam! Rem minus, et suscipit incidunt fugiat quidem quam assumenda
+							 cupiditate magnam laborum commodi pariatur repellat odio placeat 
+							 non.
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- .RIGHTPANEL -->
+		</div>
+		<!--.MAINAREA -->
+	</div>
+	<!-- .Wrapper -->
+	<div class="footer" id="footer" th:insert="/fragments/footer :: footer">
+	</div>
+</body>
+</html>
