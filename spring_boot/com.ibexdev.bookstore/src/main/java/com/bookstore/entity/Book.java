@@ -3,10 +3,9 @@ package com.bookstore.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
 @Document(collection = "books")
 public class Book {
-	
+
 	@Id
 	private String id;
 	private String title;
@@ -22,8 +21,9 @@ public class Book {
 	
 	public Book() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Book(String id, String title, String genre, String isbn, String price, String author, String publisher,
 			String pubYear, String description, String buyBook, String imgPath) {
 		super();
@@ -39,73 +39,95 @@ public class Book {
 		this.buyBook = buyBook;
 		this.imgPath = imgPath;
 	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getGenre() {
 		return genre;
 	}
+
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+
 	public String getIsbn() {
 		return isbn;
 	}
+
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
+
 	public String getPrice() {
 		return price;
 	}
+
 	public void setPrice(String price) {
 		this.price = price;
 	}
+
 	public String getAuthor() {
 		return author;
 	}
+
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+
 	public String getPublisher() {
 		return publisher;
 	}
+
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
+
 	public String getPubYear() {
 		return pubYear;
 	}
+
 	public void setPubYear(String pubYear) {
 		this.pubYear = pubYear;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public String getBuyBook() {
 		return buyBook;
 	}
+
 	public void setBuyBook(String buyBook) {
 		this.buyBook = buyBook;
 	}
+
 	public String getImgPath() {
 		return imgPath;
 	}
+
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", title=" + title + ", genre=" + genre + ", isbn=" + isbn + ", price=" + price

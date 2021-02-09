@@ -3,6 +3,7 @@ package com.bookstore.dao;
 
 
 import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -26,19 +27,28 @@ public class BookSearchRepository {
 						Criteria.where("author").regex(text, "i"))
 				), Book.class);
 	}
+
+//	list all books with sort
+//	public Collection<Book> allBooks() {
+//		Query query = new Query();
+//		query.with(Sort.by(Sort.Direction.ASC, "genre"));
+//		return mongoTemplate.find(query,Book.class);
+//	}
 	
-	//List all books per genre
+	
+//	List all books per genre
 	public Collection<Book> dbGenre() {
 		Query query = new Query();
 		query.addCriteria(Criteria.where("genre").regex("^d"));
-		return mongoTemplate.find(query, Book.class);	 
+		return mongoTemplate.find(query, Book.class);
+		 
 	}
 	
-	//
 	public Collection<Book> dbCount() {
 		Query query = new Query();
 		query.addCriteria(Criteria.where("genre").regex("^d"));
-		return mongoTemplate.find(query, Book.class);	 
+		return mongoTemplate.find(query, Book.class);
+		 
 	}
 
 	public Collection<Book> javaGenre() {

@@ -118,13 +118,14 @@
         					<td id="tds">Price:</td>
         					<td th:text="${book.price}"></td>
     					</tr>
-    					<tr>
-						<td><a th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
-						<td><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
-						</tr>
+    					
     					<tr>
         					<td colspan="2" id="tds"><a th:href="@{/book/{id}(id=${book.id})}">view book</a></td>
     					</tr>
+    					<tr>
+						<td><a th:href="@{#}">Edit</a></td>
+						<td><a th:href="@{#}">Delete</a></td>
+						</tr>
 					</table>
     			</div><!-- .BOOKS -->
 			</div><!-- .RIGHTPANEL -->
